@@ -1,0 +1,32 @@
+.header-main {
+    box-shadow: 0 4px 4px rgb(0 0 0 / 4%), 0 4px 16px rgb(0 0 0 / 8%);
+    padding: 0 35px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    background: #1F2326;
+    height: 75px;
+    width: 100%;
+}
+.header-main-links{
+    margin: auto 0;
+    display: flex;
+    justify-content: space-between;
+    width:40%
+}
+.header-main-links a{
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #FFFFFF;
+}
+.header-main-user{
+    width: 30%;
+    margin: auto 0;
+}
+.header-main-user a{
+    margin: 0 1rem ;
+}
