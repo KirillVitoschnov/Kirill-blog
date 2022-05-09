@@ -20,7 +20,8 @@ class CreateNewsTable extends Migration
             $table->string('title');
             $table->string('text');
             $table->string('image');
-            $table->integer('status');
+            $table->integer('status')->default(0);
+            $table->integer('view_count')->default(0);
         });
     }
 

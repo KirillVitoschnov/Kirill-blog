@@ -13,7 +13,8 @@ class News extends Model
         'title',
         'text',
         'image',
-        'status'
+        'status',
+        'view_count'
     ];
     use HasFactory;
 
