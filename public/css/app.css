@@ -9,6 +9,10 @@
   width: 100%;
 }
 
+.header-main-wrapper {
+  background: #1F2326;
+}
+
 .header-main-links {
   margin: auto 0;
   display: flex;
@@ -52,4 +56,15 @@ body {
   flex-direction: column;
   overflow-x: hidden;
   margin: 0;
+}
+
+.container {
+  width: 1366px;
+  margin: 0 auto;
+}
+
+.news-filter-main {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
 }
