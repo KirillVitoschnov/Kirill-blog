@@ -1,19 +1,9 @@
 @include('head')
 @include('header')
 <div class="container">
-    <form method="get" action="{{route('newsList')}}" class="news-filter-main">
-        <input type="text" value="{{request('search')}}" name="search" placeholder="Поиск новостей">
-{{--        <div>--}}
-{{--            <input type="radio" id="date"--}}
-{{--                   name="sortBy" value="date">--}}
-{{--            <label for="date">Сортировать по дате публикации</label>--}}
-
-{{--            <input type="radio" id="popular"--}}
-{{--                   name="sortBy" value="popular">--}}
-{{--            <label for="popular">Сортировать по популярности</label>--}}
-
-{{--        </div>--}}
-        <button type="submit">Submit</button>
+    <form class="search-wrapper" method="get"  action="{{route('newsList')}}" >
+        <input type="text" name="search" class="search" placeholder="Поиск">
+        <input type="submit" name="submit" class="submit" value="Найти">
     </form>
     @foreach($news as $new)
         <a style="display: block" href="{{asset('news/'.$new->id)}}">

@@ -33,6 +33,8 @@
 .header-main-user {
   width: 30%;
   margin: auto 0;
+  justify-content: end;
+  text-align: end;
 }
 
 .header-main-user a {
@@ -63,8 +65,22 @@ body {
   margin: 0 auto;
 }
 
-.news-filter-main {
-  display: flex;
-  flex-direction: column;
-  margin: 1rem;
+input {
+  padding: 4px 10px;
+  border: 1px solid black;
+  font-size: 16px;
+}
+
+.search {
+  width: calc(100% - 97px);
+}
+
+.submit {
+  width: 70px;
+  background-color: #1c87c9;
+  color: #ffffff;
+}
+
+.search-wrapper {
+  margin: 2rem auto auto;
 }

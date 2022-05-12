@@ -1,5 +1,19 @@
-.news-filter-main{
-    display: flex;
-    flex-direction: column;
-    margin: 1rem;
+input {
+    padding: 4px 10px;
+    border: 1px solid black;
+    font-size: 16px;
+}
+
+.search {
+    width: calc(100% - 97px);
+}
+
+.submit {
+    width: 70px;
+    background-color: #1c87c9;
+    color: #ffffff;
+}
+
+.search-wrapper {
+    margin: 2rem auto auto;
 }
