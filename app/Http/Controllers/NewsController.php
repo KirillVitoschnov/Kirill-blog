@@ -13,9 +13,9 @@ class NewsController extends Controller
     {
         $search = $request->search;
         if ($search) {
-            $news = News::where('title', 'LIKE', "%{$search}%")->get();
+            $news = News::where('title', 'LIKE', "%{$search}%")->paginate(20);
         } else {
-            $news = News::all();
+            $news = News::paginate(20);
         }
         return view('news', compact('news'));
     }
