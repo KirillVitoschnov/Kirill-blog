@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('news' , [\App\Http\Controllers\NewsController::class,'index'])->name('newsList');
 Route::get('news/{id}' , [\App\Http\Controllers\NewsController::class,'detailPage'])->name('newsDetail');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
