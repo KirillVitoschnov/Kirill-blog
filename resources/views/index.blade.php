@@ -1,4 +1,6 @@
 @include('head')
 @include('header')
-я контент
+<div id="app">
+    <example-component></example-component>
+</div>
 @include('footer')

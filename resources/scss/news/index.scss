@@ -5,16 +5,20 @@ input {
 }
 
 .search {
+    min-height: 40px;
     width: calc(100% - 197px);
 }
 
 .submit {
+    min-height: 40px;
     width: 170px;
     background-color: #1c87c9;
     color: #ffffff;
+    margin-left: auto;
 }
 
 .search-wrapper {
+    display: flex;
     margin: 2rem auto auto;
 }
 .news-wrapper{
