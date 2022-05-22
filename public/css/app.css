@@ -11326,7 +11326,9 @@ textarea.form-control-lg {
 }
 
 .header-main-user a {
+  color: #FFFFFF;
   margin: 0 1rem;
+  text-decoration: none;
 }
 
 .footer-main {
@@ -11397,4 +11399,11 @@ input {
 
 .news-card-wrapper span {
   display: block;
+}
+
+.news-pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 5rem 0;
 }

@@ -18,6 +18,6 @@
             </a>
         @endforeach
     </div>
-    {{$news->links()}}
+    <div class="news-pagination">{{$news->links()}}</div>
 </div>
 @include('footer')

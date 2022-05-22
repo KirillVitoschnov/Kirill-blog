@@ -8,8 +8,8 @@
 
     </nav>
     <div class="header-main-user">
-        <a>Войти</a>
-        <a>Зарегистрироваться</a>
+        <a href="{{url('/login')}}">Войти</a>
+        <a href="{{url('/register')}}">Зарегистрироваться</a>
     </div>
 </div>
 </div>
