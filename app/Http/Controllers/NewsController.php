@@ -13,16 +13,16 @@ class NewsController extends Controller
     {
         $search = $request->search;
         if ($search) {
-            $news = News::where('title', 'LIKE', "%{$search}%")->paginate(10);
+            $news = News::with('category_name')->where('title', 'LIKE', "%{$search}%")->paginate(10);
         } else {
-            $news = News::paginate(10);
+            $news = News::with('category_name')->paginate(10);
         }
         return view('news', compact('news'));
     }
 
     public function detailPage($id)
     {
-        $news = News::findorfail($id);
+        $news = News::with('category_name')->findorfail($id);
         event('postHasViewed', $news);
         return view('newsDetail', compact('news'));
     }

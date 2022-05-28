@@ -11,7 +11,7 @@
                 <img height="300px" width="100%" src="{{'/files/news_images/'.$new->image}}" alt="">
                 <div>
                     <h1>{{$new->title}}</h1>
-                    <span>{{$new->category}}</span>
+                    <span>{{$new->category_name[0]->category}}</span>
                     <span>{{$new->updated_at}}</span>
                     <span>Просмотрено {{$new->view_count}}</span>
                 </div>
