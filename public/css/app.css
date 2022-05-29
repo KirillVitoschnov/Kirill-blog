@@ -11286,6 +11286,60 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.profile-title {
+  margin-top: 5rem;
+}
+
+.profile-wrapper {
+  justify-content: space-between;
+  padding: 20px;
+  display: flex;
+  margin-top: 2rem;
+  width: 100%;
+  min-height: 450px;
+  border: 1px solid grey;
+}
+
+.profile-avatar {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+.profile-avatar img {
+  border-radius: 50%;
+}
+
+.avatar-button {
+  width: 100% !important;
+  margin: auto !important;
+  display: block !important;
+}
+.avatar-button span {
+  cursor: pointer;
+}
+.avatar-button span label {
+  cursor: pointer;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 350px);
+}
+
+.profile-input {
+  margin: 0.5rem 0;
+}
+
+.profile-birthday {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-select {
+  width: 33%;
+}
+
 .header-main {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.08);
   padding: 0 35px;

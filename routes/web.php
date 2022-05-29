@@ -17,6 +17,7 @@ use App\Http\Controllers\NewsController;
 Route::get('/', function () {
     return view('index');
 });
+Route::get('profile', [\App\Http\Controllers\ProfileController::class,'index'])->name('profile');
 Route::get('news' , [\App\Http\Controllers\NewsController::class,'index'])->name('newsList');
 Route::get('news/{id}' , [\App\Http\Controllers\NewsController::class,'detailPage'])->name('newsDetail');
 

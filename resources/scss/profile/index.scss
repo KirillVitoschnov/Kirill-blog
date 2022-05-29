@@ -1,0 +1,51 @@
+.profile-title {
+    margin-top: 5rem;
+}
+
+.profile-wrapper {
+    justify-content: space-between;
+    padding: 20px;
+    display: flex;
+    margin-top: 2rem;
+    width: 100%;
+    min-height: 450px;
+    border: 1px solid grey;
+}
+
+.profile-avatar {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    & img{
+        border-radius:50%
+    }
+}
+
+.avatar-button {
+    width: 100% !important;
+    margin: auto !important;
+    display: block !important;
+    & span{
+        cursor: pointer;
+        & label{
+            cursor: pointer;
+        }
+    }
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 350px);
+}
+.profile-input{
+    margin: 0.5rem 0;
+
+}
+.profile-birthday{
+    display: flex;
+    justify-content: space-between;
+}
+.profile-select{
+    width: 33%;
+}
