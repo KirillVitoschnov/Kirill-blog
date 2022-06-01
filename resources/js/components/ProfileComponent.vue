@@ -14,24 +14,29 @@
                 <el-input
                     class="profile-input"
                     placeholder="Имя"
-                    v-model="input1">
+                    v-model="User.name">
                 </el-input>
                 <el-input
                     class="profile-input"
                     placeholder="Никнейм"
-                    v-model="input1">
+                    v-model="User.nick_name">
                 </el-input>
-                <el-input class="profile-input" placeholder="Email"></el-input>
-                <el-select class="profile-input" v-model="value" placeholder="Гендер">
+                <el-input v-model="User.email" class="profile-input" placeholder="Email"></el-input>
+                <el-select class="profile-input" v-model="User.gender" placeholder="Пол">
                     <el-option
-                        v-for="item in options"
-                        :key="item.value"
-                        :label="item.label"
-                        :value="item.value">
+                        :key="1"
+                        :label="'Мужской'"
+                        :value="'1'">
+                    </el-option>
+                    <el-option
+                        :key="2"
+                        :label="'Женский'"
+                        :value="'2'">
                     </el-option>
                 </el-select>
                 <div class="profile-birthday">
-                    <el-select class="profile-select" v-model="User.year" placeholder="Год рождения" @change="getDays()">
+                    <el-select class="profile-select" v-model="User.year" placeholder="Год рождения"
+                               @change="getDays()">
                         <el-option
                             v-for="item in years"
                             :key="item"
@@ -63,9 +68,19 @@
 
 <script>
 export default {
+    props: {
+        userInitial: {
+            type: Object
+        }
+    },
     data() {
         return {
             User: {
+                name: '',
+                email: '',
+                nick_name: '',
+                birth_day: '',
+                gender: '',
                 day: '',
                 mounth: '',
                 year: '',
@@ -76,14 +91,25 @@ export default {
         }
     },
     mounted() {
-        for (let year = 1900; year <= new Date().getFullYear(); year++) {
+        this.User.birthday = new Date(this.userInitial.birthday)
+        this.User.name = this.userInitial.name
+        this.User.nick_name = this.userInitial.nick_name
+        this.User.email = this.userInitial.email
+        this.User.gender = this.userInitial.gender
+        for (let year = new Date().getFullYear() - 100; year <= new Date().getFullYear(); year++) {
             this.years.push(year)
         }
+        this.years.reverse()
+        this.User.day = this.User.birthday.getDate()
+        this.User.mounth = this.User.birthday.getMonth()
+        this.User.year = this.User.birthday.getFullYear()
+        this.getDays()
+        console.log(this.User)
 
     },
     methods: {
         getDays() {
-            this.days=[]
+            this.days = []
             for (let day = 1; day <= new Date(this.User.year, this.User.mounth, 0).getDate(); day++) {
                 this.days.push(day)
             }

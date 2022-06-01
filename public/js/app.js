@@ -7032,10 +7032,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: {
+    userInitial: {
+      type: Object
+    }
+  },
   data: function data() {
     return {
       User: {
+        name: '',
+        email: '',
+        nick_name: '',
+        birth_day: '',
+        gender: '',
         day: '',
         mounth: '',
         year: ''
@@ -7046,9 +7061,22 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    for (var year = 1900; year <= new Date().getFullYear(); year++) {
+    this.User.birthday = new Date(this.userInitial.birthday);
+    this.User.name = this.userInitial.name;
+    this.User.nick_name = this.userInitial.nick_name;
+    this.User.email = this.userInitial.email;
+    this.User.gender = this.userInitial.gender;
+
+    for (var year = new Date().getFullYear() - 100; year <= new Date().getFullYear(); year++) {
       this.years.push(year);
     }
+
+    this.years.reverse();
+    this.User.day = this.User.birthday.getDate();
+    this.User.mounth = this.User.birthday.getMonth();
+    this.User.year = this.User.birthday.getFullYear();
+    this.getDays();
+    console.log(this.User);
   },
   methods: {
     getDays: function getDays() {
@@ -92205,11 +92233,11 @@ var render = function () {
             staticClass: "profile-input",
             attrs: { placeholder: "Имя" },
             model: {
-              value: _vm.input1,
+              value: _vm.User.name,
               callback: function ($$v) {
-                _vm.input1 = $$v
+                _vm.$set(_vm.User, "name", $$v)
               },
-              expression: "input1",
+              expression: "User.name",
             },
           }),
           _vm._v(" "),
@@ -92217,38 +92245,50 @@ var render = function () {
             staticClass: "profile-input",
             attrs: { placeholder: "Никнейм" },
             model: {
-              value: _vm.input1,
+              value: _vm.User.nick_name,
               callback: function ($$v) {
-                _vm.input1 = $$v
+                _vm.$set(_vm.User, "nick_name", $$v)
               },
-              expression: "input1",
+              expression: "User.nick_name",
             },
           }),
           _vm._v(" "),
           _c("el-input", {
             staticClass: "profile-input",
             attrs: { placeholder: "Email" },
+            model: {
+              value: _vm.User.email,
+              callback: function ($$v) {
+                _vm.$set(_vm.User, "email", $$v)
+              },
+              expression: "User.email",
+            },
           }),
           _vm._v(" "),
           _c(
             "el-select",
             {
               staticClass: "profile-input",
-              attrs: { placeholder: "Гендер" },
+              attrs: { placeholder: "Пол" },
               model: {
-                value: _vm.value,
+                value: _vm.User.gender,
                 callback: function ($$v) {
-                  _vm.value = $$v
+                  _vm.$set(_vm.User, "gender", $$v)
                 },
-                expression: "value",
+                expression: "User.gender",
               },
             },
-            _vm._l(_vm.options, function (item) {
-              return _c("el-option", {
-                key: item.value,
-                attrs: { label: item.label, value: item.value },
-              })
-            }),
+            [
+              _c("el-option", {
+                key: 1,
+                attrs: { label: "Мужской", value: "1" },
+              }),
+              _vm._v(" "),
+              _c("el-option", {
+                key: 2,
+                attrs: { label: "Женский", value: "2" },
+              }),
+            ],
             1
           ),
           _vm._v(" "),

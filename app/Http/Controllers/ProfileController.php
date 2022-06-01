@@ -11,6 +11,7 @@ class ProfileController extends Controller
 {
     public function index(Request $request)
     {
-        return view('cabinet.profile');
+        $user = auth()->user();
+        return view('cabinet.profile',compact('user'));
     }
 }
