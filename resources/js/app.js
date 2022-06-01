@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import  ElementUi from 'element-ui';
+import  ElementUi from 'element-ui/lib/locale/lang/ru-RU';
 import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(ElementUi)
 /**
